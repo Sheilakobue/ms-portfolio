@@ -4,7 +4,7 @@ import Image from "next/image"; // Importing the Image component from Next.js fo
 import ParticlesBackground from "./ParticlesBackground"; // Importing a custom background component
 import { FaGithub, FaDev, FaFacebook, FaLinkedin } from "react-icons/fa"; // Importing icons from react-icons
 import Link from "next/link"; // Importing the Link component from Next.js for client-side navigation
-import { TypeAnimation } from "react-type-animation"; // Importing the TypeAnimation component for text animation
+import { TypeAnimation} from "react-type-animation"; // Importing the TypeAnimation component for text animation
 
 /**
  * Hero component for the homepage, displaying a welcome message, animated text, social media icons, and an image.
