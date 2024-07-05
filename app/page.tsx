@@ -1,5 +1,5 @@
 import Hero from '@/components/Hero'; // Import the Hero component from the specified path
-
+import Portfolio from '@/components/Portfolio';
 /**
  * The Home function is a React functional component that renders the Hero component.
  *
@@ -9,6 +9,9 @@ import Hero from '@/components/Hero'; // Import the Hero component from the spec
 export default function Home() {
   // Return the Hero component wrapped in a fragment
   return (
+    <>
     <Hero/>
+    <Portfolio/>
+    </>
   );
 }
