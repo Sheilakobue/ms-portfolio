@@ -27,7 +27,7 @@ export default async function Home() {
   return (
     <>
     <Hero/>
-    <Portfolio projects{projects}/>
+    <Portfolio projects={projects} />
     </>
   );
 }
