@@ -5,7 +5,7 @@ const [isScrolling, setIsScrolling] = useState(false)
 
 useEffect(()=>{
     const handleScroll =()=> {
-        setIsScrolling(window.scrollY >700);
+        setIsScrolling(window.scrollY > 200);
     };
     window.addEventListener("scroll", handleScroll)
     return()=>{
