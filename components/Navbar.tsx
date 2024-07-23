@@ -1,10 +1,11 @@
-"use client"; // This directive indicates that the code is client-side
+'use client'; // This directive indicates that the code is client-side
 
 import useScrollEffect from "@/hooks/useScroll";
 import Link from "next/link"; // Import the Link component from Next.js for navigation
 import { useState } from "react"; // Import the useState hook from React
 import { FiMenu } from "react-icons/fi"; // Import the FiMenu icon from react-icons
 import { MdClose } from "react-icons/md"; // Import the MdClose icon from react-icons
+
 // Define the navigation links with unique IDs, names, and routes
 const navLinks = [
   { id: 1, name: "Home", route: "#home" },
@@ -23,8 +24,7 @@ const navLinks = [
  */
 export default function Navbar() {
   const [openMobileMenu, setOpenMobileMenu] = useState(false); // State to manage the mobile menu visibility
-
-  const isScrolling = useScrollEffect()
+  const isScrolling = useScrollEffect(); // Hook to detect scrolling
 
   // Function to toggle the mobile menu
   const handleOpenMobileMenu = () => {
@@ -32,21 +32,30 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`w-full top-0 z-[99999] py-5 ${isScrolling ? "fixed top-0 bg-blue-300 border-0 bg-opacity-50  shadow-lg transition duration-500":"relative"}`}>
-      <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
+    <nav 
+      className={`w-full top-0 z-[99999] py-5 ${
+      isScrolling 
+      ? "fixed top-0 bg-blue-300 shadow-lg transition duration-500 border-0 bg-opacity-50"
+      :"relative"
+      }`}
+      >
+       <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
+        
         {/* Logo linking to the home section */}
         <Link href={"#home"}>
-          <h1 className="text-3xl text-blue-700 font-bold">MMS</h1>
-        </Link>
+        <h1 className="text-3xl text-blue-300 font-bold underline">MS Kobue</h1>
+</Link>
+
+
         {/* Desktop navigation links */}
-        <ul className={`flex gap-10 
-        max-md:hidden ${isScrolling ? 
-        "text-blue-700" : "text-blue-300"}`} >
+        <ul 
+        className={`flex gap-10 max-md:hidden ${
+          isScrolling ? "text-blue-900" : "text-blue-300"}`} >
           {navLinks.map((link) => ( 
             <Link
               href={link.route}
               key={link.id}
-              className="hover:underline hover:text-blue-700 transition duration-500"
+              className="hover:underline hover:text-yellow-300 transition duration-500"
             >
               <li>{link.name}</li>
             </Link>
@@ -54,14 +63,14 @@ export default function Navbar() {
         </ul>
         {/* Mobile menu toggle button */}
         <div
-          className={`md:hidden txt-3xl cursor-pointe ${isScrolling ? "text-blue-700" : "text-blue-300"}`}
+          className={`md:hidden txt-3xl cursor-pointe ${isScrolling ? "text-blue-900 " : "text-blue-300"}`}
           onClick={handleOpenMobileMenu}
         >
           {openMobileMenu ? <MdClose /> : <FiMenu />}
         </div>
         {/* Mobile navigation links */}
         {openMobileMenu && (
-          <ul className="md:hidden bg-blue-700 absolute top-14 right-5 px-4 py-6 text-center rounded-md flex flex-col gap-3 shadow-md">
+          <ul className="md:hidden bg-blue-300  absolute top-14 right-5 px-4 py-6 text-center rounded-md flex flex-col gap-3 shadow-md">
             {navLinks.map((link) => (
               <Link
                 href={link.route}

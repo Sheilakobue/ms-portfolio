@@ -52,7 +52,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
       {categories.map((category) => (
         <button
           key={category.key}
-          className={`text-blue-500 
+          className={`text-gray-500 
         ${
           activeCategory === category.key
             ? "border-yellow-500 border-b-2"
