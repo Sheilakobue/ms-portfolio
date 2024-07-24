@@ -55,39 +55,7 @@ const Portfolio: React.FC<{ projects: Project[] }>
             Projects
           </span>
         </div>
-        {/* Project filter component to filter projects based on categories */}
-        <ProjectFilter
-          setFiltered={setFiltered}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          projects={projects}
-        />
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {filtered
-            .slice(0, visibleProjects)
-            .map((project, index) => (
-              <ProjectCard
-                key={index}
-                name={project.name}
-                image={project.image}
-                url={project.url}
-              />
-            ))}
-        </div>
-
-        {visibleProjects < filtered.length && (
-          <div className="text-center mt-4">
-            <button
-              className="bg-yellow-500 py-2 px-4 rounded-md font-bold mt-10"
-              onClick={loadMoreProjects}
-              aria-label="Show More Projects"
-            >
-              Show More
-            </button>
-          </div>
-        )}
-      </div>
+       </div>
     </div>
   );
 };

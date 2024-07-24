@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
  * @returns {boolean} A boolean value indicating whether the user has scrolled past 100px.
  */
 export default function useScrollEffect() {
-  const [isScrolling, setIsScrolling] = useState(false); // State to manage the scrolling status
+  const [isScrolling, setIsScrolling] = useState(false); 
+  // State to manage the scrolling status
 
   useEffect(() => {
     // Function to handle scroll events

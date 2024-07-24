@@ -8,6 +8,8 @@ import { client } from '@/sanity/lib/client';
  * @returns {JSX.Element} The rendered Hero component.
  */
 
+export const dynamic ="force-dynamic";
+
 async function getData(){
   const query = `*[_type == "project"] {
   name,
