@@ -72,7 +72,7 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
         {visibleProjects < filtered.length && (
           <div className="text-center mt-4">
             <button
-              className="bg-yellow-300 py-2 px-4 rounded-md font-bold mt-10 text-blue-950"
+              className="bg-yellow-300 py-2 px-4 rounded-md font-bold mt-10"
               onClick={loadMoreProjects}
               aria-label="Show More Projects"
             >

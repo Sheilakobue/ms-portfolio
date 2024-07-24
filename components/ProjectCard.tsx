@@ -22,7 +22,7 @@ const ProjectCard: React.FC<{
 
   return (
     <div
-      className="shadow-md cursor-pointer relative"
+      className="shadow-lg cursor-pointer relative"
       onMouseLeave={() => setIsHovered(false)}
       onMouseEnter={() => setIsHovered(true)}
     >
