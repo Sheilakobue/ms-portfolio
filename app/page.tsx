@@ -16,7 +16,7 @@ async function getData(){
   image,
   url,
   category,
-  }`
+  }`;
 
   const data = await client.fetch(query)
   
