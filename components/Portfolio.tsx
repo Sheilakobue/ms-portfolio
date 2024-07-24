@@ -46,11 +46,12 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
     <div id="projects" className="w-full h-fit py-10 relative bg-blue-100">
       <div className="max-w-[1400px] mx-auto w-[91%]">
-        <div className="flex justify-center">
-          <span className="bg-yellow-300 px-2 text-xl text-blue-950 font-extrabold border uppercase rounded-md mb-5">
+      <div className="flex justify-center">
+          <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase  mb-4">
             Projects
           </span>
         </div>
+        <hr className="w-10 h-1 mx-auto m-2 bg-sky-300 border-0 rounded" />
         <ProjectFilter
           setFiltered={setFiltered}
           activeCategory={activeCategory}
@@ -72,7 +73,7 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
         {visibleProjects < filtered.length && (
           <div className="text-center mt-4">
             <button
-              className="bg-yellow-300 py-2 px-4 rounded-md font-bold mt-10"
+              className="bg-yellow-300 py-2 px-4 rounded-md font-bold mt-10 text-blue-950 "
               onClick={loadMoreProjects}
               aria-label="Show More Projects"
             >

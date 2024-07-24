@@ -39,7 +39,7 @@ export default function Skills() {
             Skills
           </span>
         </div>
-        <hr className="w-6 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
+        <hr className="w-10 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
    </section>
   )
 }
