@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav 
       className={`w-full top-0 z-[99999] py-5 ${
       isScrolling 
-      ? "fixed top-0 bg-blue-300 shadow-lg transition duration-500 border-0 bg-opacity-50"
+      ? "fixed top-0 bg-blue-300 shadow-lg transition duration-500 bg-opacity-80"
       :"relative"
       }`}
       >
@@ -43,7 +43,11 @@ export default function Navbar() {
         
         {/* Logo linking to the home section */}
         <Link href={"#home"}>
-        <h1 className="text-3xl text-blue-300 font-bold underline">MS Kobue</h1>
+        <h1 className={`text-3xl ${isScrolling ? 
+          "text-blue-900 font-bold underline " : 
+          "text-blue-300 font-bold underline"}`}>
+            MS Kobue
+            </h1>
 </Link>
 
 

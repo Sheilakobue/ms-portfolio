@@ -11,7 +11,7 @@ export const useScrollEffect = () => {
     // Function to handle scroll event
     const handleScroll = () => {
       // Update the state based on the scroll position
-      setIsScrolling(window.scrollY > 0);
+      setIsScrolling(window.scrollY > 200);
     };
 
     // Add event listener for scroll event
