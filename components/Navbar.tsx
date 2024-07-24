@@ -1,10 +1,10 @@
 'use client'; // This directive indicates that the code is client-side
 
-import useScrollEffect from "@/hooks/useScroll";
 import Link from "next/link"; // Import the Link component from Next.js for navigation
 import { useState } from "react"; // Import the useState hook from React
 import { FiMenu } from "react-icons/fi"; // Import the FiMenu icon from react-icons
 import { MdClose } from "react-icons/md"; // Import the MdClose icon from react-icons
+import { useScrollEffect } from "@/hooks/useScroll";
 
 // Define the navigation links with unique IDs, names, and routes
 const navLinks = [

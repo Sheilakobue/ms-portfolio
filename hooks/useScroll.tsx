@@ -1,31 +1,28 @@
+// Importing necessary hooks from React
 import { useEffect, useState } from "react";
 
-/**
- * useScrollEffect is a custom React hook that tracks whether the user has scrolled
- * past a certain point (100px) on the page. It returns a boolean value indicating
- * whether the user is scrolling.
- *
- * @function useScrollEffect
- * @returns {boolean} A boolean value indicating whether the user has scrolled past 100px.
- */
-export default function useScrollEffect() {
-  const [isScrolling, setIsScrolling] = useState(false); 
-  // State to manage the scrolling status
+// Custom hook to detect if the user is scrolling
+export const useScrollEffect = () => {
+  // State variable to keep track of scrolling status
+  const [isScrolling, setIsScrolling] = useState(false);
 
+  // Effect hook to add event listener for scroll event
   useEffect(() => {
-    // Function to handle scroll events
+    // Function to handle scroll event
     const handleScroll = () => {
-      setIsScrolling(window.scrollY > 100);
+      // Update the state based on the scroll position
+      setIsScrolling(window.scrollY > 0);
     };
 
-    // Add scroll event listener
+    // Add event listener for scroll event
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup scroll event listener on component unmount
+    // Clean up function to remove event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures this effect runs only once
+  }, []); // Empty dependency array ensures that the effect runs only once
 
-  return isScrolling; // Return the scrolling status
-}
+  // Return the current scrolling status
+  return isScrolling;
+};
