@@ -40,6 +40,13 @@ export default function Skills() {
           </span>
         </div>
         <hr className="w-10 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
+        <div className="max-w-[1400px mx-auto grid md:grid-cols-2 md:gap-10">
+          {skills.map((skill, index) =>(
+            <div key={index}>
+              <ProgressBar{...skill} />
+            </div>
+          ))}
+        </div>
    </section>
   )
 }
