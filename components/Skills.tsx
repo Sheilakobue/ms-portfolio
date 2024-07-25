@@ -1,52 +1,49 @@
 import ProgressBar from "./ProgressBar";
 
+/**
+ * An array of skill objects, each containing the icon path, title, and percentage.
+ */
 const skills = [
-  {iconPath:"/html5-icon.png", tittle:"HTML",
-    percentage:90},
-  {iconPath:"/css-icon.png", tittle:"CSS",
-    percentage:80},
-  {iconPath:"/public/tailwindcss-icon.png", tittle:"tailwind.CSS",
-    percentage:90},
-  {iconPath:"/JS-icon.gif", tittle:"JavaScript",
-    percentage:50},
-  {iconPath:"/next.js icon.png", tittle:"Next.js",
-    percentage:90},
-  {iconPath:"/react-icon.gif", tittle:"React",
-    percentage:90},
-  {iconPath:"/git-icon.png", tittle:"Git",
-    percentage:90},
-  {iconPath:"/github-icon.gif", tittle:"GitHub",
-    percentage:70},
-  {iconPath:"/node-js-icon.png", tittle:"Node.js",
-    percentage:90},
-  {iconPath:"/mongodb-icon.png", tittle:"MongoDB",
-    percentage:70},
-  {iconPath:"/supabase-icon.png", tittle:"Superbase",
-    percentage:90},
-  {iconPath:"/firebase-icon.png", tittle:"Firebase",
-    percentage:60},
-  {iconPath:"/public/netlify-icon.png", tittle:"Netlify",
-    percentage:60},
+  { iconPath: "/html5-icon.png", title: "HTML", percentage: 80 },
+  { iconPath: "/css-icon.png", title: "CSS", percentage: 80 },
+  { iconPath: "/tailwindcss-icon.png", title: "tailwind.CSS", percentage: 60 },
+  { iconPath: "/JS-icon.gif", title: "JavaScript", percentage: 60 },
+  { iconPath: "/next.js icon.png", title: "Next.js", percentage: 70 },
+  { iconPath: "/react-icon.gif", title: "React", percentage: 80 },
+  { iconPath: "/git-icon.png", title: "Git", percentage: 70 },
+  { iconPath: "/github-icon.gif", title: "GitHub", percentage: 70 },
+  { iconPath: "/node-js-icon.png", title: "Node.js", percentage: 70 },
+  { iconPath: "/mongodb-icon.png", title: "MongoDB", percentage: 70 },
+  { iconPath: "/supabase-icon.png", title: "Superbase", percentage: 60 },
+  { iconPath: "/firebase-icon.png", title: "Firebase", percentage: 60 },
+  { iconPath: "/netlify-icon.png", title: "Netlify", percentage: 80 },
 ];
 
+/**
+ * Skills component displays a section containing a list of skill progress bars.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered Skills section.
+ */
 export default function Skills() {
   return (
-   <section 
-   id="skills"
-   className="w-full h-fit px-[40px] py-20 relative bg-blue-100">
-       <div className="flex justify-center">
-          <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase  mb-4">
-            Skills
-          </span>
-        </div>
-        <hr className="w-10 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
-        <div className="max-w-[1400px mx-auto grid md:grid-cols-2 md:gap-10">
-          {skills.map((skill, index) =>(
-            <div key={index}>
-              <ProgressBar{...skill} />
-            </div>
-          ))}
-        </div>
-   </section>
-  )
+    <section 
+      id="skills"
+      className="w-full h-fit py-20 relative bg-blue-100"
+    >
+      <div className="flex justify-center">
+        <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase mb-4">
+          Skills
+        </span>
+      </div>
+      <hr className="w-10 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
+      <div className="max-w-[1400px] w-[91%] mx-auto grid md:grid-cols-4 md:gap-10">
+        {skills.map((skill, index) => (
+          <div key={index}>
+            <ProgressBar {...skill} />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
