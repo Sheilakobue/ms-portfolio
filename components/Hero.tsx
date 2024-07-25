@@ -37,18 +37,25 @@ export default function Hero() {
               repeat={Infinity}
             />
             <div className="mb-3">
-            <Link href={"#contact"}>
-              <span className="text-yellow-300 underline text-sm">
-                Contact Me &#8594;
-              </span>
-            </Link>
+              <Link href={"#contact"}>
+                <span className="text-yellow-300 underline text-sm">
+                  Contact Me &#8594;
+                </span>
+              </Link>
             </div>
           </span>
-          <div className="flex gap-5 text-blue-700 text-2xl max-md:justify-center">
+          <div className="flex gap-5 text-blue-700 text-2xl max-md:justify-center mb-5">
             <FaGithub />
             <FaDev />
             <FaFacebook />
             <FaLinkedin />
+          </div>
+          <div>
+            <a href="/_Sheila_Kobue_Resume.pdf" download="_Sheila_Kobue_Resume.pdf">
+              <button className="px-2 py-2 text-sm rounded-full bg-transparent hover:bg-transparent hover:bg-slate-500 text-yellow-300 border border-blue-500">       
+                Download CV
+              </button>
+            </a>
           </div>
         </div>
         <div className="flex flex-1 justify-end max-md:order-1 max-md:mb-3">
