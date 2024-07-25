@@ -20,6 +20,8 @@ export default function ProgressBar({
   percentage: number;
   iconPath: string;
 }) {
+  const isAnimated = iconPath.endsWith('.gif');
+
   return (
     <div className="mb-10">
       <div className="flex items-center mb-2 gap-1">
@@ -27,8 +29,9 @@ export default function ProgressBar({
           src={iconPath}
           height={60}
           width={60}
-          alt={`${title} icon`} 
+          alt={`${title} icon`}
           className="w-7 h-7"
+          unoptimized={isAnimated} 
         />
         <div className="font-medium text-blue-950">
           {title}

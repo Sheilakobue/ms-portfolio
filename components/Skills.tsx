@@ -29,7 +29,7 @@ export default function Skills() {
   return (
     <section 
       id="skills"
-      className="w-full h-fit py-20 relative bg-blue-100"
+      className="w-full h-fit px-[40px] py-20 relative bg-blue-100"
     >
       <div className="flex justify-center">
         <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase mb-4">
@@ -37,7 +37,7 @@ export default function Skills() {
         </span>
       </div>
       <hr className="w-10 h-1 mx-auto m-4 bg-sky-300 border-0 rounded" />
-      <div className="max-w-[1400px] w-[91%] mx-auto grid md:grid-cols-4 md:gap-10">
+      <div className="max-w-[1400px] mx-auto grid md:grid-cols-3 md:gap-10">
         {skills.map((skill, index) => (
           <div key={index}>
             <ProgressBar {...skill} />

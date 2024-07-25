@@ -2,6 +2,8 @@ import Hero from '@/components/Hero'; // Import the Hero component from the spec
 import Portfolio from '@/components/Portfolio';
 import { client } from '@/sanity/lib/client';
 import Skills from '@/components/Skills';
+import ContactForm from'@/components/ContactForm';
+
 /**
  * The Home function is a React functional component that renders the Hero component.
  *
@@ -32,6 +34,7 @@ export default async function Home() {
     <Hero/>
     <Portfolio projects={projects} />
     <Skills/>
+    <ContactForm/>
     </>
   );
 }
