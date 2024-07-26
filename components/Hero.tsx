@@ -45,11 +45,14 @@ export default function Hero() {
             </div>
           </span>
           <div className="flex gap-5 text-blue-700 text-2xl max-md:justify-center mb-5">
-            <FaGithub />
+                    
+            <a target="_blank" href="https://www.linkedin.com/in/sheila-kobue-82161973/"><FaLinkedin /></a>
+            <a target="_blank" href="https://web.facebook.com/maserole.mojela/"><FaFacebook /></a>
+            <a target="_blank" href="https://github.com/Sheilakobue/interactive-web-apps.git/"> <FaGithub /></a>
             <FaDev />
-            <FaFacebook />
-            <FaLinkedin />
-          </div>
+        </div>  
+    
+         
           <div>
             <a href="/_Sheila_Kobue_Resume.pdf" download="_Sheila_Kobue_Resume.pdf">
               <button className="px-2 py-2 text-sm rounded-full bg-transparent hover:bg-transparent hover:bg-slate-500 text-yellow-300 border border-blue-500">       
