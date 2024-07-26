@@ -29,10 +29,10 @@ export default function Skills() {
   return (
     <section 
       id="skills"
-      className="w-full h-fit px-[40px] py-20 relative bg-blue-100"
+      className="w-full h-fit px-[40px] py-2 relative bg-blue-100"
     >
       <div className="flex justify-center">
-        <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase mb-4">
+        <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase mb-2 mt-2">
           Skills
         </span>
       </div>

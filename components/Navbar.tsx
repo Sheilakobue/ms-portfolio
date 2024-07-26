@@ -10,8 +10,6 @@ import { useScrollEffect } from "@/hooks/useScroll";
 const navLinks = [
   { id: 1, name: "Home", route: "#home" },
   { id: 2, name: "Projects", route: "#projects" },
-  { id: 3, name: "Testimonials", route: "#testimonials" },
-  { id: 4, name: "Skills", route: "#skills" },
   { id: 5, name: "Contact", route: "#contact" },
 ];
 

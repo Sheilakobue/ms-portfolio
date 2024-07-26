@@ -40,11 +40,10 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
     { key: "all", label: "All" },
     { key: "next", label: "Next.js" },
     { key: "react", label: "React" },
-    { key: "vanilla", label: "Vanilla" },
+    { key: "typeScript", label: "TypeScript" },
     { key: "mongo", label: "MongoDB" },
     { key: "tailwind", label: "Tailwind" },
-    { key: "prisma", label: "Prisma" },
-    { key: "sql", label: "SQL" },
+    
   ];
 
   
