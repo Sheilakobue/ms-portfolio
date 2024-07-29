@@ -2,6 +2,7 @@ import type { Metadata } from "next"; // Import the Metadata type from Next.js
 import { Poppins } from "next/font/google"; // Import the Poppins font from Google Fonts using Next.js
 import "./globals.css"; // Import global CSS styles
 import Navbar from "@/components/Navbar"; // Import the Navbar component from the specified path
+import Footer from "@/components/Footer";
 
 // Initialize the Poppins font with specified subsets and weights
 const poppins = Poppins({ 
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className={poppins.className}> {/* Apply the Poppins font to the body */}
         <Navbar/> {/* Render the Navbar component */}
         {children} {/* Render the child components */}
+        <Footer/>
       </body>
     </html>
   );
