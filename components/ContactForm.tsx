@@ -40,6 +40,7 @@ export default function ContactForm() {
       className="sr-only">
         Name
       </label>
+
       <input type="text"
       required
       name="name"
@@ -53,6 +54,7 @@ export default function ContactForm() {
       className="sr-only">
         Email
       </label>
+
       <input type="text"
       required
       name="email"
@@ -63,6 +65,7 @@ export default function ContactForm() {
       border-b focus:outline-yellow-300 text-blue-700
       bg-blue-100 "/>
     </div>
+
     <div className="mb-4">
       <label htmlFor="message" className="sr-only">
         Your Message
@@ -75,9 +78,15 @@ export default function ContactForm() {
       border-b focus:outline-yellow-300 text-blue-700
       bg-blue-100 "
     >
-
     </textarea>
     </div>
+    <button
+      className="px-4 py-2 text-sm font-bold rounded-md bg-transparent hover:bg-transparent hover:bg-slate-300 text-blue-500 border border-blue-500"
+      aria-label="Submit"
+      disabled={pending}
+      >
+      Submit
+    </button>
     </form>
   )
 }
