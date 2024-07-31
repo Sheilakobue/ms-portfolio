@@ -4,7 +4,7 @@ import Link from "next/link"; // Import the Link component from Next.js for navi
 import { useState } from "react"; // Import the useState hook from React
 import { FiMenu } from "react-icons/fi"; // Import the FiMenu icon from react-icons
 import { MdClose } from "react-icons/md"; // Import the MdClose icon from react-icons
-import { useScrollEffect } from "@/hooks/useScroll";
+import { useScrollEffect } from "@/hooks/useScroll"; // Import a custom hook to detect scrolling
 
 // Define the navigation links with unique IDs, names, and routes
 const navLinks = [
@@ -34,25 +34,24 @@ export default function Navbar() {
       className={`w-full top-0 z-[99999] py-5 ${
       isScrolling 
       ? "fixed top-0 bg-blue-300 shadow-lg transition duration-500 bg-opacity-80"
-      :"relative"
+      : "relative"
       }`}
-      >
-       <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
+    >
+      <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
         
         {/* Logo linking to the home section */}
         <Link href={"#home"}>
-        <h1 className={`text-3xl ${isScrolling ? 
-          "text-blue-900 font-bold underline " : 
-          "text-blue-300 font-bold underline"}`}>
+          <h1 className={`text-3xl ${isScrolling ? 
+            "text-blue-900 font-bold underline " : 
+            "text-blue-300 font-bold underline"}`}>
             MS Kobue
-            </h1>
-</Link>
-
+          </h1>
+        </Link>
 
         {/* Desktop navigation links */}
         <ul 
-        className={`flex gap-10 max-md:hidden ${
-          isScrolling ? "text-blue-900" : "text-blue-300"}`} >
+          className={`flex gap-10 max-md:hidden ${
+            isScrolling ? "text-blue-900" : "text-blue-300"}`} >
           {navLinks.map((link) => ( 
             <Link
               href={link.route}
@@ -63,16 +62,18 @@ export default function Navbar() {
             </Link>
           ))}
         </ul>
+        
         {/* Mobile menu toggle button */}
         <div
-          className={`md:hidden txt-3xl cursor-pointe ${isScrolling ? "text-blue-900 " : "text-blue-300"}`}
+          className={`md:hidden txt-3xl cursor-pointer ${isScrolling ? "text-blue-900 " : "text-blue-300"}`}
           onClick={handleOpenMobileMenu}
         >
           {openMobileMenu ? <MdClose /> : <FiMenu />}
         </div>
+        
         {/* Mobile navigation links */}
         {openMobileMenu && (
-          <ul className="md:hidden bg-blue-300  absolute top-14 right-5 px-4 py-6 text-center rounded-md flex flex-col gap-3 shadow-md">
+          <ul className="md:hidden bg-blue-300 absolute top-14 right-5 px-4 py-6 text-center rounded-md flex flex-col gap-3 shadow-md">
             {navLinks.map((link) => (
               <Link
                 href={link.route}

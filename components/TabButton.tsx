@@ -10,17 +10,23 @@ import React from 'react';
  * @param {React.ReactNode} props.children - The content of the tab button.
  * @returns {JSX.Element} The rendered TabButton component.
  */
-export default function TabButton({ active, selectTab, children }) {
+export default function TabButton({ active, selectTab, children, className }) {
   // Determine the button classes based on the active state
   const buttonClasses = active
     ? 'text-sky-300 border-b border-yellow-300'
     : 'text-blue-900';
 
-  return (
-    <button onClick={selectTab}>
-      <p className={`mr-3  hover:text-yellow-300 ${buttonClasses}`}>
-        {children}
-      </p>
-    </button>
-  );
-}
+    return (
+      <button
+        onClick={selectTab}
+        type="button"
+        className={`focus:outline-none ${className}`}
+        role="tab"
+        aria-selected={active}
+      >
+        <p className={`mr-3 hover:text-yellow-300 ${buttonClasses}`}>
+          {children}
+        </p>
+      </button>
+    );
+  }

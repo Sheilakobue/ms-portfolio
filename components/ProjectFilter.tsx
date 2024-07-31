@@ -1,5 +1,4 @@
 "use client";
-//import { Project } from "next/dist/build/swc";
 import { useEffect } from "react";
 
 // Interface for the Project type
@@ -33,7 +32,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
       project.category?.includes(activeCategory)
     );
     setFiltered(filtered);
-  },[activeCategory]);
+  }, [activeCategory, projects, setFiltered]);
 
   // List of categories for filtering projects
   const categories = [
@@ -43,19 +42,18 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
     { key: "typeScript", label: "TypeScript" },
     { key: "mongo", label: "MongoDB" },
     { key: "tailwind", label: "Tailwind" },
-    
   ];
 
-  
   return (
     <div className="flex gap-8 my-10 items-center flex-wrap justify-center">
       {categories.map((category) => (
         <button
           key={category.key}
+          aria-pressed={activeCategory === category.key}
           className={`text-blue-900 ${
-            activeCategory === category.key 
-            ? "border-yellow-500 border-b-2" 
-            : ""
+            activeCategory === category.key
+              ? "border-yellow-500 border-b-2"
+              : ""
           }`}
           onClick={() => setActiveCategory(category.key)}
         >
@@ -65,4 +63,5 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
     </div>
   );
 };
+
 export default ProjectFilter;

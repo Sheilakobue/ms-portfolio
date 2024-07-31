@@ -15,8 +15,12 @@ import { TypeAnimation } from "react-type-animation"; // Importing the TypeAnima
 export default function Hero() {
   return (
     <header id="home" className="relative h-fit py-10">
+      {/* Render the custom background particles */}
       <ParticlesBackground />
+      
       <div className="relative flex justify-between max-w-[1400px] mx-auto items-center h-full w-[91%] max-md:flex-col">
+        
+        {/* Text section */}
         <div className="flex flex-col justify-center text-blue-300 flex-1 max-md:order-2 max-md:text-center">
           <h2 className="font-bold md:text-1xl text-2xl mb-2">
             Hi, I am Sheila Kobue, a Full Stack
@@ -24,6 +28,7 @@ export default function Hero() {
           <h1 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-yellow-300 mb-5">
             Developer
           </h1>
+          
           {/* Animated text */}
           <span className="md:w-3/4 mb-3">
             <TypeAnimation 
@@ -44,15 +49,16 @@ export default function Hero() {
               </Link>
             </div>
           </span>
+          
+          {/* Social media icons */}
           <div className="flex gap-5 text-blue-700 text-2xl max-md:justify-center mb-5">
-                    
             <a target="_blank" href="https://www.linkedin.com/in/sheila-kobue-82161973/"><FaLinkedin /></a>
             <a target="_blank" href="https://web.facebook.com/maserole.mojela/"><FaFacebook /></a>
-            <a target="_blank" href="https://github.com/Sheilakobue/interactive-web-apps.git/"> <FaGithub /></a>
+            <a target="_blank" href="https://github.com/Sheilakobue/interactive-web-apps.git/"><FaGithub /></a>
             <FaDev />
-        </div>  
-    
-         
+          </div>  
+          
+          {/* Download CV button */}
           <div>
             <a href="/_Sheila_Kobue_Resume.pdf" download="_Sheila_Kobue_Resume.pdf">
               <button className="px-2 py-2 text-sm rounded-full bg-transparent hover:bg-transparent hover:bg-slate-500 text-yellow-300 border border-blue-500">       
@@ -61,6 +67,8 @@ export default function Hero() {
             </a>
           </div>
         </div>
+        
+        {/* Image section */}
         <div className="flex flex-1 justify-end max-md:order-1 max-md:mb-3">
           <Image
             src={"/header-image.jpg"}

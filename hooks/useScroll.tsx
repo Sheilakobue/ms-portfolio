@@ -1,28 +1,46 @@
-// Importing necessary hooks from React
 import { useEffect, useState } from "react";
 
-// Custom hook to detect if the user is scrolling
-export const useScrollEffect = () => {
-  // State variable to keep track of scrolling status
+/**
+ * Custom React hook to detect if the user has scrolled past a specified threshold.
+ *
+ * @param {number} [threshold=200] - The scroll position (in pixels) that triggers the scroll effect. Default is 200.
+ * @returns {boolean} - Returns `true` if the user has scrolled past the threshold, `false` otherwise.
+ */
+export const useScrollEffect = (threshold: number = 200) => {
+  // State to keep track of whether the user has scrolled past the threshold
   const [isScrolling, setIsScrolling] = useState(false);
 
-  // Effect hook to add event listener for scroll event
   useEffect(() => {
-    // Function to handle scroll event
+    // Variable to hold a reference to the timeout
+    let timeout: NodeJS.Timeout | undefined;
+
+    /**
+     * Handler function to be called on scroll event.
+     * Sets the scrolling state based on the current scroll position.
+     */
     const handleScroll = () => {
-      // Update the state based on the scroll position
-      setIsScrolling(window.scrollY > 200);
+      // Clear the existing timeout to debounce the scroll event
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      // Set a new timeout to update the state after scrolling stops
+      timeout = setTimeout(() => {
+        // Update the state based on the current scroll position
+        setIsScrolling(window.scrollY > threshold);
+      }, 100); // 100ms debounce delay
     };
 
-    // Add event listener for scroll event
+    // Add the scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up function to remove event listener when component unmounts
+    // Clean up function to remove event listener and clear timeout
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (timeout) {
+        clearTimeout(timeout);
+      }
     };
-  }, []); // Empty dependency array ensures that the effect runs only once
+  }, [threshold]); // Dependency array to re-run the effect if the threshold changes
 
-  // Return the current scrolling status
   return isScrolling;
 };

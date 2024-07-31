@@ -6,7 +6,7 @@ import ProgressBar from "./ProgressBar";
 const skills = [
   { iconPath: "/html5-icon.png", title: "HTML", percentage: 80 },
   { iconPath: "/css-icon.png", title: "CSS", percentage: 80 },
-  { iconPath: "/tailwindcss-icon.png", title: "tailwind.CSS", percentage: 60 },
+  { iconPath: "/tailwindcss-icon.png", title: "Tailwind CSS", percentage: 60 },
   { iconPath: "/JS-icon.gif", title: "JavaScript", percentage: 60 },
   { iconPath: "/next.js icon.png", title: "Next.js", percentage: 70 },
   { iconPath: "/react-icon.gif", title: "React", percentage: 80 },
@@ -14,7 +14,7 @@ const skills = [
   { iconPath: "/github-icon.gif", title: "GitHub", percentage: 70 },
   { iconPath: "/node-js-icon.png", title: "Node.js", percentage: 70 },
   { iconPath: "/mongodb-icon.png", title: "MongoDB", percentage: 70 },
-  { iconPath: "/supabase-icon.png", title: "Superbase", percentage: 60 },
+  { iconPath: "/supabase-icon.png", title: "Supabase", percentage: 60 },
   { iconPath: "/firebase-icon.png", title: "Firebase", percentage: 60 },
   { iconPath: "/netlify-icon.png", title: "Netlify", percentage: 80 },
 ];
@@ -27,10 +27,7 @@ const skills = [
  */
 export default function Skills() {
   return (
-    <section 
-      id="skills"
-      className="w-full h-fit px-[40px] py-2 relative bg-blue-100"
-    >
+    <section id="skills" className="w-full h-fit px-[40px] py-2 relative bg-blue-100">
       <div className="flex justify-center">
         <span className="text-center text-xl font-bold text-blue-900 px-2 uppercase mb-2 mt-2">
           Skills

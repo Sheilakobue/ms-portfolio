@@ -1,8 +1,8 @@
 "use client"; // Indicates that this code should be run on the client side
 
-import { useState, useEffect} from "react";
-import ProjectFilter from "./ProjectFilter";
-import ProjectCard from "./ProjectCard";
+import { useState, useEffect } from "react";
+import ProjectFilter from "./ProjectFilter"; // Importing the ProjectFilter component
+import ProjectCard from "./ProjectCard"; // Importing the ProjectCard component
 
 // Interface for the Project type
 interface Project {
@@ -22,12 +22,14 @@ interface Project {
  * @returns {JSX.Element} The rendered Portfolio component.
  */
 const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
-  const [activeCategory, setActiveCategory] = useState<string>("all"); // State to manage the active category for filtering projects
-  const [filtered, setFiltered] = useState<Project[]>([]); // State to manage the filtered list of projects
-  const [visibleProjects, setVisibleProjects] = useState<number>(2); // State to manage the number of visible projects
-  
+  // State to manage the active category for filtering projects
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  // State to manage the filtered list of projects
+  const [filtered, setFiltered] = useState<Project[]>([]);
+  // State to manage the number of visible projects
+  const [visibleProjects, setVisibleProjects] = useState<number>(2);
 
-  // Load more projects by increasing the visibleProjects state by 2
+  // Function to load more projects by increasing the visibleProjects state by 2
   const loadMoreProjects = () => {
     setVisibleProjects((prevProjects) => prevProjects + 2);
   };
@@ -38,6 +40,7 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       setFiltered(projects); // Show all projects if the active category is "all"
       return;
     }
+    // Filter projects based on the active category
     const filteredProjects = projects.filter((project) =>
       project.category?.includes(activeCategory)
     );
@@ -53,12 +56,14 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
           </span>
         </div>
         <hr className="w-10 h-1 mx-auto m-2 bg-sky-300 border-0 rounded" />
+        {/* ProjectFilter component for filtering projects */}
         <ProjectFilter
           setFiltered={setFiltered}
           activeCategory={activeCategory}
           setActiveCategory={setActiveCategory}
           projects={projects}
         />
+        {/* Grid of ProjectCard components */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
           {filtered.slice(0, visibleProjects).map((project, index) => (
             <ProjectCard
@@ -69,6 +74,7 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
             />
           ))}
         </div>
+        {/* Show More button */}
         {visibleProjects < filtered.length && (
           <div className="text-center mt-5 mb-0">
             <button
@@ -81,7 +87,6 @@ const Portfolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
           </div>
         )}
       </div>
-
     </div>
   );
 };

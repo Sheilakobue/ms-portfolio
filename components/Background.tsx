@@ -1,8 +1,9 @@
 "use client"; // Indicates that this code should be run on the client side
-import React, { useState, useTransition } from 'react';
-import TabButton from "./TabButton";
-import Link from "next/link";
+import React, { useState, useTransition } from 'react'; // Import necessary hooks from React
+import TabButton from "./TabButton"; // Import the TabButton component from the specified path
+import Link from "next/link"; // Import the Link component from Next.js
 
+// Define the data for the tabs
 const TAB_DATA = [
   {
     title: "Soft Skills",
@@ -24,7 +25,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc list-inside pl-4">
         <h1 className='font-bold'>Sterkrevier Combined School - 2005</h1>
-        <h4>Grade:12</h4>
+        <h4>Grade: 12</h4>
         <p>Subjects: English, Sepedi, Afrikaans, Mathematics, Physical Science, Biology, History.</p>
         <hr className="w-50 h-1 mx-auto m-2 bg-sky-300 border-0 rounded" />
 
@@ -34,11 +35,10 @@ const TAB_DATA = [
         <hr className="w-50 h-1 mx-auto m-2 bg-sky-300 border-0 rounded" />
 
         <h1>Programming Fundamentals <a className='underline font-bold hover:text-yellow-300' target='_blank' href="https://www.codespace.co.za/">Codespace</a></h1>
-        <p>December 2022</p>     
+        <p>December 2022</p>
         <hr className="w-50 h-1 mx-auto m-2 bg-sky-300 border-0 rounded" />
         <h1>Intro to Web <a className='underline font-bold hover:text-yellow-300' target='_blank' href="https://www.codespace.co.za/">Codespace</a></h1>
         <li>March 2023</li>
-        
       </ul>
     ),
   },
@@ -46,7 +46,7 @@ const TAB_DATA = [
     title: "Certificates",
     id: "certificates",
     content: (
-      <ul className="list-disc list-inside pl-4 ">
+      <ul className="list-disc list-inside pl-4">
         <li><Link className='hover:underline hover:text-yellow-300 transition duration-500' href="/Certificates/Software Engineering cert.pdf" download="Software Engineering cert.pdf">Software Engineering</Link></li>
         <li><Link className='hover:underline hover:text-yellow-300 transition duration-500' href="/public/Certificates/Next.js & React Certificate.pdf" download="Next.js & React Certificate.pdf">Next.js & React</Link></li>
         <li><Link className='hover:underline hover:text-yellow-300 transition duration-500' href="/public/Certificates/Computer Literacy & Basic.pdf" download="Computer Literacy & Basic.pdf">Computer Literacy & Basic Computer</Link></li>
@@ -87,35 +87,32 @@ export default function Background() {
   // Function to handle tab changes
   const handleTabChange = (id: string) => {
     startTransition(() => {
-      setTab(id);
-      const element = document.getElementById(id);
+      setTab(id); // Set the active tab
+      const element = document.getElementById(id); // Find the tab content element by id
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: "smooth" }); // Smoothly scroll to the tab content
       }
     });
   };
 
   return (
-    <section 
-    
-      className="w-full h-fit px-[40px] py-2 relative bg-blue-100"
-    >
-    <div className="container mx-auto p-2 text-blue-950">
-      <div className="flex justify-items-end items-left my-5 flex-wrap flex-row mt-8">
-        {TAB_DATA.map((tabData) => (
-          <TabButton
-            key={tabData.id}
-            selectTab={() => handleTabChange(tabData.id)}
-            active={tab === tabData.id}
-          >
-            {tabData.title}
-          </TabButton>
-        ))}
+    <section className="w-full h-fit px-[40px] py-2 relative bg-blue-100">
+      <div className="container mx-auto p-2 text-blue-950">
+        <div className="flex justify-items-end items-left my-5 flex-wrap flex-row mt-8">
+          {TAB_DATA.map((tabData) => (
+            <TabButton
+              key={tabData.id}
+              selectTab={() => handleTabChange(tabData.id)} // Handle tab selection
+              active={tab === tabData.id} // Set the active state for the tab button
+            >
+              {tabData.title} {/* Tab button title */}
+            </TabButton>
+          ))}
+        </div>
+        <div className="mt-8">
+          {TAB_DATA.find((t) => t.id === tab).content} {/* Render the content of the active tab */}
+        </div>
       </div>
-      <div className="mt-8">
-        {TAB_DATA.find((t) => t.id === tab).content}
-      </div>
-    </div>
     </section>
   );
 }
