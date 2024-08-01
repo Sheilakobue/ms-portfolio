@@ -8,25 +8,20 @@ import React from 'react';
  * @param {boolean} props.active - Indicates whether the tab is active.
  * @param {Function} props.selectTab - Function to select the tab when clicked.
  * @param {React.ReactNode} props.children - The content of the tab button.
+ * @param {string} [props.className] - Optional className for additional styling.
  * @returns {JSX.Element} The rendered TabButton component.
  */
-export default function TabButton({ active, selectTab, children, className }) {
+export default function TabButton({ active, selectTab, children, className = '' }) {
   // Determine the button classes based on the active state
   const buttonClasses = active
     ? 'text-sky-300 border-b border-yellow-300'
     : 'text-blue-900';
 
-    return (
-      <button
-        onClick={selectTab}
-        type="button"
-        className={`focus:outline-none ${className}`}
-        role="tab"
-        aria-selected={active}
-      >
-        <p className={`mr-3 hover:text-yellow-300 ${buttonClasses}`}>
-          {children}
-        </p>
-      </button>
-    );
-  }
+  return (
+    <button onClick={selectTab} className={className}>
+      <p className={`mr-3 hover:text-yellow-300 ${buttonClasses}`}>
+        {children}
+      </p>
+    </button>
+  );
+}

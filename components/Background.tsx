@@ -104,6 +104,7 @@ export default function Background() {
               key={tabData.id}
               selectTab={() => handleTabChange(tabData.id)} // Handle tab selection
               active={tab === tabData.id} // Set the active state for the tab button
+              className="custom-tab-button"
             >
               {tabData.title} {/* Tab button title */}
             </TabButton>

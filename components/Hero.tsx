@@ -2,7 +2,7 @@
 
 import Image from "next/image"; // Importing the Image component from Next.js for optimized images
 import ParticlesBackground from "./ParticlesBackground"; // Importing a custom background component
-import { FaGithub, FaDev, FaFacebook, FaLinkedin } from "react-icons/fa"; // Importing icons from react-icons
+import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa"; // Importing icons from react-icons
 import Link from "next/link"; // Importing the Link component from Next.js for client-side navigation
 import { TypeAnimation } from "react-type-animation"; // Importing the TypeAnimation component for text animation
 
@@ -55,7 +55,7 @@ export default function Hero() {
             <a target="_blank" href="https://www.linkedin.com/in/sheila-kobue-82161973/"><FaLinkedin /></a>
             <a target="_blank" href="https://web.facebook.com/maserole.mojela/"><FaFacebook /></a>
             <a target="_blank" href="https://github.com/Sheilakobue/interactive-web-apps.git/"><FaGithub /></a>
-            <FaDev />
+            
           </div>  
           
           {/* Download CV button */}
