@@ -41,7 +41,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
     { key: "next", label: "Next.js" },
     { key: "react", label: "React" },
     { key: "typescript", label: "TypeScript" },
-    { key: "mongo", label: "MongoDB" },
+    { key: "mongodb", label: "MongoDB" },
     { key: "tailwind", label: "Tailwind" },
   ];
 

@@ -17,6 +17,7 @@ const skills = [
   { iconPath: "/supabase-icon.png", title: "Supabase", percentage: 60 },
   { iconPath: "/firebase-icon.png", title: "Firebase", percentage: 60 },
   { iconPath: "/netlify-icon.png", title: "Netlify", percentage: 80 },
+  { iconPath: "/wordpress-icon.png", title: "Wordpress", percentage: 60 },
 ];
 
 /**
