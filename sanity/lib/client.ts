@@ -1,5 +1,5 @@
 
-import { createClient } from 'next-sanity';// Import the createClient function from the next-sanity library
+import { createClient } from 'next-sanity'; // Import the createClient function from the next-sanity library
 import { apiVersion, dataset, projectId, useCdn } from '../env'; // Import configuration values from the environment file
 import imageUrlBuilder from "@sanity/image-url"; // Import the imageUrlBuilder function from the @sanity/image-url library
 
