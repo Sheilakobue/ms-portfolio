@@ -111,7 +111,7 @@ export default function Background() {
           ))}
         </div>
         <div className="mt-8">
-          {TAB_DATA.find((t) => t.id === tab).content} {/* Render the content of the active tab */}
+        {TAB_DATA.find((t) => t.id === tab)?.content || <p>Tab content not found.</p>} {/* Render the content of the active tab */}
         </div>
       </div>
     </section>
